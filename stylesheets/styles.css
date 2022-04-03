@@ -1,3 +1,21 @@
 body {
-    background-color: red;
+	background-color: burlywood;
 }
+
+.navigation {
+	background-color: brown;
+}
+
+#page-container {
+	width: 800px;
+	margin: 0 auto;
+}
+
+.quote-card {
+	text-align: center;
+}
+
+/* #quote-container {
+	display: block;
+	text-align: center;
+} */
