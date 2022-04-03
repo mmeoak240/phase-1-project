@@ -62,13 +62,15 @@ const loadCredits = (event) => {
 
 	h1.innerText = "Made possible because of:";
 	li.innerText = "Type your guess and hit submit";
+	li.innerText = "Test text";
 
 	h1.className = "center-align";
-	ul.className = "center-align";
-	li.className = "center-align";
+	ul.className = "collection with-header";
+	// li.className = "center-align";
+	li.className = "collection-header";
 
 	mainDiv().appendChild(h1);
-	mainDiv().ul.appendChild(li);
+	mainDiv().appendChild(li);
 };
 
 /**MISC*/
