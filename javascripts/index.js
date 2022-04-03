@@ -4,6 +4,7 @@
 const mainDiv = () => document.getElementById("main");
 const homeLink = () => document.getElementById("home-link");
 const beginLink = () => document.getElementById("begin-link");
+const creditsLink = () => document.getElementById("credits-link");
 /**Event Listeners*/
 const attachHomeLink = () => {
 	homeLink().addEventListener("click", loadHome);
@@ -39,6 +40,23 @@ const loadBegin = (event) => {
 	const p = document.createElement("p");
 
 	h1.innerText = "Who Said...";
+	p.innerText = "Type your guess and hit submit";
+
+	h1.className = "center-align";
+	p.className = "center-align";
+
+	mainDiv().appendChild(h1);
+	mainDiv().appendChild(p);
+};
+
+const loadCredits = (event) => {
+	event.preventDefault;
+	resetMainDiv();
+	const h1 = document.createElement("h1");
+	const ul = document.createElement("ul");
+	const li = document.createElement("li");
+
+	h1.innerText = "MAde possible because of:";
 	p.innerText = "Type your guess and hit submit";
 
 	h1.className = "center-align";
