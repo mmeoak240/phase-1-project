@@ -3,19 +3,42 @@
 /**Node Getters*/
 const mainDiv = () => document.getElementById("main");
 const homeLink = () => document.getElementById("home-link");
+const beginLink = () => document.getElementById("begin-link");
 /**Event Listeners*/
 const attachHomeLink = () => {
 	homeLink().addEventListener("click", loadHome);
 };
 
+const attachBeginLink = () => {
+	beginLink().addEventListener("click", loadBegin);
+};
+
 /**Event Handlers*/
-const loadHome = () => {
+const loadHome = (event) => {
+	if (event) {
+		event.preventDefault();
+	}
 	resetMainDiv();
 	const h1 = document.createElement("h1");
 	const p = document.createElement("p");
 
 	h1.innerText = "That's What Who Said!";
 	p.innerText = "How well do you know your Office family?";
+
+	h1.className = "center-align";
+	p.className = "center-align";
+
+	mainDiv().appendChild(h1);
+	mainDiv().appendChild(p);
+};
+
+const loadBegin = (event) => {
+	event.preventDefault;
+	const h1 = document.createElement("h1");
+	const p = document.createElement("p");
+
+	h1.innerText = "Who Said...";
+	p.innerText = "Type your guess and hit submit";
 
 	h1.className = "center-align";
 	p.className = "center-align";
@@ -34,6 +57,7 @@ const resetMainDiv = () => {
 document.addEventListener("DOMContentLoaded", function () {
 	loadHome();
 	attachHomeLink();
+	attachBeginLink();
 });
 
 // const quizContainer = document.getElementById("quiz");
