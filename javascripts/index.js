@@ -34,6 +34,7 @@ const loadHome = (event) => {
 
 const loadBegin = (event) => {
 	event.preventDefault;
+	resetMainDiv();
 	const h1 = document.createElement("h1");
 	const p = document.createElement("p");
 
