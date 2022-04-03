@@ -42,15 +42,20 @@ const loadBegin = (event) => {
 	resetMainDiv();
 	const h1 = document.createElement("h1");
 	const p = document.createElement("p");
+	const btn = document.createElement("button");
+	console.log(btn);
 
 	h1.innerText = "Who Said...";
 	p.innerText = "Type your guess and hit submit";
+	btn.innerText = "Fight!";
 
 	h1.className = "center-align";
 	p.className = "center-align";
+	btn.className = "center-align";
 
 	mainDiv().appendChild(h1);
 	mainDiv().appendChild(p);
+	mainDiv().appendChild(btn);
 };
 
 const loadCredits = (event) => {
