@@ -70,19 +70,12 @@ const loadCredits = (event) => {
 	credit4.innerText = "https://www.officeapi.dev/";
 
 	h1.className = "center-align";
-	ul.className = "collection with-header";
-	// li.className = "center-align";
-	credit1.className = "collection-header";
-	credit2.className = "collection-header";
-	credit3.className = "collection-header";
-	credit4.className = "collection-header";
 
 	mainDiv().appendChild(h1);
-	mainDiv().append(ul);
-	mainDiv().ul.appendChild(credit1);
-	mainDiv().ul.appendChild(credit2);
-	mainDiv().ul.appendChild(credit3);
-	mainDiv().ul.appendChild(credit4);
+	mainDiv().appendChild(credit1);
+	mainDiv().appendChild(credit2);
+	mainDiv().appendChild(credit3);
+	mainDiv().appendChild(credit4);
 };
 
 /**MISC*/
