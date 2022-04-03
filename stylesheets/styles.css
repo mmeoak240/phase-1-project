@@ -6,16 +6,7 @@ body {
 	background-color: brown;
 }
 
-#page-container {
-	width: 800px;
-	margin: 0 auto;
+#begin-content {
+	display: inline-block;
+	margin-left: 500px;
 }
-
-.quote-card {
-	text-align: center;
-}
-
-/* #quote-container {
-	display: block;
-	text-align: center;
-} */

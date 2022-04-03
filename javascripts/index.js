@@ -2,6 +2,8 @@
 
 /**Node Getters*/
 const mainDiv = () => document.getElementById("main");
+const beginContentDiv = () => document.getElementById("begin-content");
+console.log(beginContentDiv());
 const homeLink = () => document.getElementById("home-link");
 const beginLink = () => document.getElementById("begin-link");
 const creditsLink = () => document.getElementById("credits-link");
@@ -43,7 +45,6 @@ const loadBegin = (event) => {
 	const h1 = document.createElement("h1");
 	const p = document.createElement("p");
 	const btn = document.createElement("button");
-	console.log(btn);
 
 	h1.innerText = "Who Said...";
 	p.innerText = "Type your guess and hit submit";
@@ -51,11 +52,10 @@ const loadBegin = (event) => {
 
 	h1.className = "center-align";
 	p.className = "center-align";
-	btn.className = "center-align";
 
 	mainDiv().appendChild(h1);
 	mainDiv().appendChild(p);
-	mainDiv().appendChild(btn);
+	beginContentDiv().appendChild(btn);
 };
 
 const loadCredits = (event) => {
@@ -86,6 +86,10 @@ const loadCredits = (event) => {
 /**MISC*/
 const resetMainDiv = () => {
 	mainDiv().innerHTML = "";
+};
+
+const resetBeginDiv = () => {
+	beginContentDiv().innerHTML = "";
 };
 
 /**StartUp*/
