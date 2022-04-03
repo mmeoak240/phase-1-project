@@ -14,6 +14,10 @@ const attachBeginLink = () => {
 	beginLink().addEventListener("click", loadBegin);
 };
 
+const attachCreditsLink = () => {
+	creditsLink().addEventListener("click", loadCredits);
+};
+
 /**Event Handlers*/
 const loadHome = (event) => {
 	if (event) {
@@ -56,14 +60,15 @@ const loadCredits = (event) => {
 	const ul = document.createElement("ul");
 	const li = document.createElement("li");
 
-	h1.innerText = "MAde possible because of:";
-	p.innerText = "Type your guess and hit submit";
+	h1.innerText = "Made possible because of:";
+	li.innerText = "Type your guess and hit submit";
 
 	h1.className = "center-align";
-	p.className = "center-align";
+	ul.className = "center-align";
+	li.className = "center-align";
 
 	mainDiv().appendChild(h1);
-	mainDiv().appendChild(p);
+	mainDiv().ul.appendChild(li);
 };
 
 /**MISC*/
@@ -77,6 +82,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	loadHome();
 	attachHomeLink();
 	attachBeginLink();
+	attachCreditsLink();
 });
 
 // const quizContainer = document.getElementById("quiz");
