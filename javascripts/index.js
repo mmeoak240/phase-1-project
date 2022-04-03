@@ -57,7 +57,7 @@ const loadCredits = (event) => {
 	event.preventDefault;
 	resetMainDiv();
 	const h1 = document.createElement("h1");
-	const ul = document.createElement("ul");
+	const ul = document.getElementById("credits-lists");
 	const credit1 = document.createElement("li");
 	const credit2 = document.createElement("li");
 	const credit3 = document.createElement("li");
@@ -78,10 +78,11 @@ const loadCredits = (event) => {
 	credit4.className = "collection-header";
 
 	mainDiv().appendChild(h1);
-	mainDiv().appendChild(credit1);
-	mainDiv().appendChild(credit2);
-	mainDiv().appendChild(credit3);
-	mainDiv().appendChild(credit4);
+	mainDiv().append(ul);
+	mainDiv().ul.appendChild(credit1);
+	mainDiv().ul.appendChild(credit2);
+	mainDiv().ul.appendChild(credit3);
+	mainDiv().ul.appendChild(credit4);
 };
 
 /**MISC*/
