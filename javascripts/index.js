@@ -58,19 +58,30 @@ const loadCredits = (event) => {
 	resetMainDiv();
 	const h1 = document.createElement("h1");
 	const ul = document.createElement("ul");
-	const li = document.createElement("li");
+	const credit1 = document.createElement("li");
+	const credit2 = document.createElement("li");
+	const credit3 = document.createElement("li");
+	const credit4 = document.createElement("li");
 
 	h1.innerText = "Made possible because of:";
-	li.innerText = "Type your guess and hit submit";
-	li.innerText = "Test text";
+	credit1.innerText = "Flatiron School";
+	credit2.innerText = "Nancy Noyes";
+	credit3.innerText = "The 2022-02seng-flex cohort";
+	credit4.innerText = "https://www.officeapi.dev/";
 
 	h1.className = "center-align";
 	ul.className = "collection with-header";
 	// li.className = "center-align";
-	li.className = "collection-header";
+	credit1.className = "collection-header";
+	credit2.className = "collection-header";
+	credit3.className = "collection-header";
+	credit4.className = "collection-header";
 
 	mainDiv().appendChild(h1);
-	mainDiv().appendChild(li);
+	mainDiv().appendChild(credit1);
+	mainDiv().appendChild(credit2);
+	mainDiv().appendChild(credit3);
+	mainDiv().appendChild(credit4);
 };
 
 /**MISC*/
