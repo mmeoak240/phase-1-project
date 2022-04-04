@@ -10,3 +10,13 @@ body {
 	display: inline-block;
 	margin-left: 500px;
 }
+
+form {
+	display: inline-block;
+	width: 100px;
+	background-color: white;
+}
+
+#guess {
+	border: 3px black;
+}
