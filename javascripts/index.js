@@ -3,7 +3,6 @@
 /**Node Getters*/
 const mainDiv = () => document.getElementById("main");
 const beginContentDiv = () => document.getElementById("begin-content");
-console.log(beginContentDiv());
 const homeLink = () => document.getElementById("home-link");
 const beginLink = () => document.getElementById("begin-link");
 const creditsLink = () => document.getElementById("credits-link");
@@ -44,18 +43,18 @@ const loadBegin = (event) => {
 	resetMainDiv();
 	const h1 = document.createElement("h1");
 	const p = document.createElement("p");
-	const btn = document.createElement("button");
-
+	const form = document.createElement("form");
+	console.log(form);
 	h1.innerText = "Who Said...";
 	p.innerText = "Type your guess and hit submit";
-	btn.innerText = "Fight!";
 
 	h1.className = "center-align";
 	p.className = "center-align";
 
 	mainDiv().appendChild(h1);
 	mainDiv().appendChild(p);
-	beginContentDiv().appendChild(btn);
+	beginContentDiv().appendChild(form);
+	mainDiv().appendChild(beginContentDiv());
 };
 
 const loadCredits = (event) => {
@@ -83,13 +82,26 @@ const loadCredits = (event) => {
 	mainDiv().appendChild(credit4);
 };
 
+const createCard = () => {
+	const div1 = document.createElement("div");
+	const div2 = document.createElement("div");
+	const div3 = document.createElement("div");
+	const div4 = document.createElement("div");
+	const span = document.createElement("span");
+	const p = document.createElement("p");
+
+	span.innerText = "Quote";
+
+	div1.className = "row";
+	div2.className = "col s12 m6";
+	div3.className = "card blue-grey darken-1";
+	div4.className = "card-content white-text";
+	span.className = "card-title";
+};
+
 /**MISC*/
 const resetMainDiv = () => {
 	mainDiv().innerHTML = "";
-};
-
-const resetBeginDiv = () => {
-	beginContentDiv().innerHTML = "";
 };
 
 /**StartUp*/
