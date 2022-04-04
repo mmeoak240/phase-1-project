@@ -6,7 +6,6 @@ const beginContentDiv = () => document.getElementById("begin-content");
 const homeLink = () => document.getElementById("home-link");
 const beginLink = () => document.getElementById("begin-link");
 const creditsLink = () => document.getElementById("credits-link");
-const guessBtn = () => document.getElementById("guess-button");
 /**Event Listeners*/
 const attachHomeLink = () => {
 	homeLink().addEventListener("click", loadHome);
@@ -44,19 +43,20 @@ const loadBegin = (event) => {
 	resetMainDiv();
 	const h1 = document.createElement("h1");
 	const p = document.createElement("p");
-	const btn = document.createElement("button");
+	// const btn = document.createElement("button");
 	h1.innerText = "Who Said...";
 	p.innerText = "Type your guess and hit submit";
-	btn.innerText = "Quote";
+	// btn.innerText = "Quote";
 
 	h1.className = "center-align";
 	p.className = "center-align";
-	btn.className = "center-align";
-	btn.setAttribute("id", "quoteButton");
+	// btn.className = "center-align";
+	// btn.setAttribute("id", "quoteButton");
 
 	mainDiv().appendChild(h1);
 	mainDiv().appendChild(p);
-	mainDiv().appendChild(btn);
+	// mainDiv().appendChild(btn);
+	quoteGetter();
 };
 
 const loadCredits = (event) => {
@@ -102,6 +102,9 @@ const loadCredits = (event) => {
 // };
 
 const quoteGetter = () => {
+	const guessBtn = document.createElement("button");
+	guessBtn.innerText = "Guess!";
+	mainDiv().appendChild(guessBtn);
 	guessBtn.addEventListener("click", (e) => {
 		fetch("https://officeapi.dev/api/quotes/random")
 			.then((resp) => resp.json())
@@ -125,7 +128,6 @@ document.addEventListener("DOMContentLoaded", function () {
 	attachHomeLink();
 	attachBeginLink();
 	attachCreditsLink();
-	quoteGetter();
 });
 
 // const quizContainer = document.getElementById("quiz");
