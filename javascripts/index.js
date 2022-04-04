@@ -6,6 +6,7 @@ const beginContentDiv = () => document.getElementById("begin-content");
 const homeLink = () => document.getElementById("home-link");
 const beginLink = () => document.getElementById("begin-link");
 const creditsLink = () => document.getElementById("credits-link");
+const guessBtn = () => document.getElementById("guess-button");
 /**Event Listeners*/
 const attachHomeLink = () => {
 	homeLink().addEventListener("click", loadHome);
@@ -43,18 +44,19 @@ const loadBegin = (event) => {
 	resetMainDiv();
 	const h1 = document.createElement("h1");
 	const p = document.createElement("p");
-	const form = document.createElement("form");
-	console.log(form);
+	const btn = document.createElement("button");
 	h1.innerText = "Who Said...";
 	p.innerText = "Type your guess and hit submit";
+	btn.innerText = "Quote";
 
 	h1.className = "center-align";
 	p.className = "center-align";
+	btn.className = "center-align";
+	btn.setAttribute("id", "quoteButton");
 
 	mainDiv().appendChild(h1);
 	mainDiv().appendChild(p);
-	beginContentDiv().appendChild(form);
-	mainDiv().appendChild(beginContentDiv());
+	mainDiv().appendChild(btn);
 };
 
 const loadCredits = (event) => {
@@ -82,21 +84,33 @@ const loadCredits = (event) => {
 	mainDiv().appendChild(credit4);
 };
 
-const createCard = () => {
-	const div1 = document.createElement("div");
-	const div2 = document.createElement("div");
-	const div3 = document.createElement("div");
-	const div4 = document.createElement("div");
-	const span = document.createElement("span");
-	const p = document.createElement("p");
+// const createCard = () => {
+// 	const div1 = document.createElement("div");
+// 	const div2 = document.createElement("div");
+// 	const div3 = document.createElement("div");
+// 	const div4 = document.createElement("div");
+// 	const span = document.createElement("span");
+// 	const p = document.createElement("p");
 
-	span.innerText = "Quote";
+// 	span.innerText = "Quote";
 
-	div1.className = "row";
-	div2.className = "col s12 m6";
-	div3.className = "card blue-grey darken-1";
-	div4.className = "card-content white-text";
-	span.className = "card-title";
+// 	div1.className = "row";
+// 	div2.className = "col s12 m6";
+// 	div3.className = "card blue-grey darken-1";
+// 	div4.className = "card-content white-text";
+// 	span.className = "card-title";
+// };
+
+const quoteGetter = () => {
+	guessBtn.addEventListener("click", (e) => {
+		fetch("https://officeapi.dev/api/quotes/random")
+			.then((resp) => resp.json())
+			.then(function (quoteObj) {
+				console.log(quoteObj);
+				const quote = quoteObj.content;
+				document.createElement("P");
+			});
+	});
 };
 
 /**MISC*/
@@ -111,6 +125,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	attachHomeLink();
 	attachBeginLink();
 	attachCreditsLink();
+	quoteGetter();
 });
 
 // const quizContainer = document.getElementById("quiz");
