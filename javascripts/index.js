@@ -106,12 +106,14 @@ const quoteGetter = () => {
 	guessBtn.innerText = "Guess!";
 	mainDiv().appendChild(guessBtn);
 	guessBtn.addEventListener("click", (e) => {
-		fetch("https://officeapi.dev/api/quotes/random")
+		fetch("https://www.officeapi.dev/api/quotes/random")
 			.then((resp) => resp.json())
 			.then(function (quoteObj) {
 				console.log(quoteObj);
 				const quote = quoteObj.content;
-				document.createElement("P");
+				const p = document.createElement("P");
+				p.textContent = quote;
+				mainDiv().appendChild(p);
 			});
 	});
 };
