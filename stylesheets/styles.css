@@ -1,15 +1,18 @@
 body {
 	background-color: burlywood;
+	position: relative;
+	width: 100%;
+	height: 100%;
 }
 
 .navigation {
 	background-color: brown;
 }
 
-#begin-content {
+/* #begin-content {
 	display: inline-block;
 	margin-left: 500px;
-}
+} */
 
 form {
 	display: inline-block;
@@ -18,6 +21,8 @@ form {
 }
 
 .guessBtn {
-	display: inline-block;
+	position: absolute;
 	cursor: pointer;
+	top: 750px;
+	left: 50%;
 }
