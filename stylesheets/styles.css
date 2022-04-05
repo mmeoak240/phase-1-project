@@ -1,18 +1,14 @@
 body {
 	background-color: burlywood;
+}
+
+#main {
 	position: relative;
-	width: 100%;
-	height: 100%;
 }
 
 .navigation {
 	background-color: brown;
 }
-
-/* #begin-content {
-	display: inline-block;
-	margin-left: 500px;
-} */
 
 form {
 	display: inline-block;
@@ -23,6 +19,10 @@ form {
 .guessBtn {
 	position: absolute;
 	cursor: pointer;
-	top: 750px;
-	left: 50%;
+	top: auto;
+	left: auto;
+}
+
+.quotePar {
+	position: absolute;
 }
