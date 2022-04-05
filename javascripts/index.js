@@ -6,7 +6,6 @@ const beginContentDiv = () => document.getElementById("begin-content");
 const homeLink = () => document.getElementById("home-link");
 const beginLink = () => document.getElementById("begin-link");
 const creditsLink = () => document.getElementById("credits-link");
-const body = () => document.getElementById("body");
 /**Event Listeners*/
 const attachHomeLink = () => {
 	homeLink().addEventListener("click", loadHome);
@@ -44,19 +43,14 @@ const loadBegin = (event) => {
 	resetMainDiv();
 	const h1 = document.createElement("h1");
 	const p = document.createElement("p");
-	// const btn = document.createElement("button");
 	h1.innerText = "Who Said...";
 	p.innerText = "Type your guess and hit submit";
-	// btn.innerText = "Quote";
 
 	h1.className = "center-align";
 	p.className = "center-align";
-	// btn.className = "center-align";
-	// btn.setAttribute("id", "quoteButton");
 
 	mainDiv().appendChild(h1);
 	mainDiv().appendChild(p);
-	// mainDiv().appendChild(btn);
 	quoteGetter();
 };
 
