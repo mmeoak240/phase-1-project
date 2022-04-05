@@ -6,6 +6,8 @@ const beginContentDiv = () => document.getElementById("begin-content");
 const homeLink = () => document.getElementById("home-link");
 const beginLink = () => document.getElementById("begin-link");
 const creditsLink = () => document.getElementById("credits-link");
+const imgURL =
+	'<img src= "https://roost.nbcuni.com/bin/viewasset.html/content/dam/Peacock/Campaign/landingpages/library/theoffice/mainpage/office-social-min.png/_jcr_content/renditions/original" class = "office-img" />';
 /**Event Listeners*/
 const attachHomeLink = () => {
 	homeLink().addEventListener("click", loadHome);
@@ -28,12 +30,13 @@ const loadHome = (event) => {
 	const h1 = document.createElement("h1");
 	const p = document.createElement("p");
 
-	h1.innerText = "That's What Who Said!";
+	h1.innerText = "That's What Who Said?!";
 	p.innerText = "How well do you know your Office family?";
 
 	h1.className = "center-align";
 	p.className = "center-align";
 
+	mainDiv().innerHTML += imgURL;
 	mainDiv().appendChild(h1);
 	mainDiv().appendChild(p);
 };
@@ -79,23 +82,6 @@ const loadCredits = (event) => {
 	mainDiv().appendChild(credit4);
 };
 
-// const createCard = () => {
-// 	const div1 = document.createElement("div");
-// 	const div2 = document.createElement("div");
-// 	const div3 = document.createElement("div");
-// 	const div4 = document.createElement("div");
-// 	const span = document.createElement("span");
-// 	const p = document.createElement("p");
-
-// 	span.innerText = "Quote";
-
-// 	div1.className = "row";
-// 	div2.className = "col s12 m6";
-// 	div3.className = "card blue-grey darken-1";
-// 	div4.className = "card-content white-text";
-// 	span.className = "card-title";
-// };
-
 const quoteGetter = () => {
 	const guessBtn = document.createElement("button");
 	guessBtn.className = "center-align";
@@ -106,11 +92,10 @@ const quoteGetter = () => {
 		fetch("https://www.officeapi.dev/api/quotes/random")
 			.then((resp) => resp.json())
 			.then(function (quoteObj) {
-				console.log(quoteObj);
 				const quote = quoteObj.data.content;
-				console.log(quote);
 				const p = document.createElement("p");
 				p.className = "container";
+				p.className = "quote-paragraph";
 				p.textContent = quote;
 				mainDiv().appendChild(p);
 			});
@@ -118,6 +103,7 @@ const quoteGetter = () => {
 };
 
 /**MISC*/
+
 const resetMainDiv = () => {
 	mainDiv().innerHTML = "";
 };
@@ -130,3 +116,6 @@ document.addEventListener("DOMContentLoaded", function () {
 	attachBeginLink();
 	attachCreditsLink();
 });
+
+// How to reset the quote 'p' element everytime quote button is clicked?
+// How to make quote button stay in place and have quotes appear in same place above everytime?
