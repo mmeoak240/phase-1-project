@@ -110,8 +110,10 @@ const quoteGetter = () => {
 			.then((resp) => resp.json())
 			.then(function (quoteObj) {
 				console.log(quoteObj);
-				const quote = quoteObj.content;
-				const p = document.createElement("P");
+				const quote = quoteObj.data.content;
+				console.log(quote);
+				const p = document.createElement("p");
+				p.className = "container";
 				p.textContent = quote;
 				mainDiv().appendChild(p);
 			});
