@@ -57,7 +57,7 @@ const loadBegin = (event) => {
 	const formText = document.createElement("form");
 
 	h1.innerText = "Who Said...";
-	p.innerText = "You have 5 seconds";
+	// p.innerText = "You have 5 seconds";
 
 	h1.className = "center-align";
 	p.className = "center-align";
@@ -118,12 +118,15 @@ const quoteGetter = () => {
 				const quote = quoteObj.data.content;
 				// const name = quoteObj.data.character.firstname;
 				const p = document.createElement("p");
+				const timerP = document.createElement("p");
 				// const p1 = document.createElement("p");
 				p.className = "container";
 				p.className = "quote-paragraph";
 				p.textContent = quote;
+				timerP.textContent = "You have 5 seconds";
 				// p1.textContent = name;
 				mainDiv().appendChild(p);
+				mainDiv().appendChild(timerP);
 				// mainDiv().appendChild(p1);
 				setTimeout(function () {
 					const name = quoteObj.data.character.firstname;
