@@ -17,6 +17,7 @@ form {
 	background-color: white;
 }
 
-#guess {
-	border: 3px black;
+.guessBtn {
+	display: inline-block;
+	cursor: pointer;
 }

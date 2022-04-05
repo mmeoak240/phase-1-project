@@ -103,6 +103,8 @@ const loadCredits = (event) => {
 
 const quoteGetter = () => {
 	const guessBtn = document.createElement("button");
+	guessBtn.className = "center-align";
+	guessBtn.className = "guessBtn";
 	guessBtn.innerText = "Guess!";
 	mainDiv().appendChild(guessBtn);
 	guessBtn.addEventListener("click", (e) => {
