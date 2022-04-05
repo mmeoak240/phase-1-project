@@ -100,7 +100,7 @@ const quoteGetter = () => {
 	const guessBtn = document.createElement("button");
 	guessBtn.className = "center-align";
 	guessBtn.className = "guessBtn";
-	guessBtn.innerText = "Guess!";
+	guessBtn.innerText = "Quote";
 	mainDiv().appendChild(guessBtn);
 	guessBtn.addEventListener("click", (e) => {
 		fetch("https://www.officeapi.dev/api/quotes/random")
@@ -111,7 +111,6 @@ const quoteGetter = () => {
 				console.log(quote);
 				const p = document.createElement("p");
 				p.className = "container";
-				p.className = "quotePar";
 				p.textContent = quote;
 				mainDiv().appendChild(p);
 			});

@@ -4,7 +4,10 @@ body {
 
 #main {
 	position: relative;
-	/* display: flex; */
+	display: grid;
+	grid-template-columns: 1;
+	grid-template-rows: 3;
+	align-content: center;
 }
 
 .navigation {
@@ -17,13 +20,13 @@ form {
 	background-color: white;
 }
 
-.guessBtn {
+/* .guessBtn {
 	position: absolute;
 	cursor: pointer;
 	top: auto;
 	left: auto;
-}
-
+} */
+/* 
 .quotePar {
 	position: absolute;
-}
+} */
