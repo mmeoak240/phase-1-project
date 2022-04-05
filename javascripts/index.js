@@ -6,6 +6,7 @@ const beginContentDiv = () => document.getElementById("begin-content");
 const homeLink = () => document.getElementById("home-link");
 const beginLink = () => document.getElementById("begin-link");
 const creditsLink = () => document.getElementById("credits-link");
+const logoLink = () => document.getElementById("logo");
 const imgURL =
 	'<img src= "https://roost.nbcuni.com/bin/viewasset.html/content/dam/Peacock/Campaign/landingpages/library/theoffice/mainpage/office-social-min.png/_jcr_content/renditions/original" class = "office-img" />';
 /**Event Listeners*/
@@ -19,6 +20,10 @@ const attachBeginLink = () => {
 
 const attachCreditsLink = () => {
 	creditsLink().addEventListener("click", loadCredits);
+};
+
+const attachlogoLink = () => {
+	logoLink().addEventListener("click", loadLogo);
 };
 
 /**Event Handlers*/
@@ -46,13 +51,24 @@ const loadBegin = (event) => {
 	resetMainDiv();
 	const h1 = document.createElement("h1");
 	const p = document.createElement("p");
+	const submit = document.createElement("input");
+	const text = document.createElement("input");
+	const formSubmit = document.createElement("form");
+	const formText = document.createElement("form");
+
 	h1.innerText = "Who Said...";
-	p.innerText = "Type your guess and hit submit";
+	p.innerText = "You have 5 seconds";
 
 	h1.className = "center-align";
 	p.className = "center-align";
+	submit.type = "input";
+	text.type = "text";
+	// input.className = "input-field";
 
 	mainDiv().appendChild(h1);
+	// formText.appendChild(text);
+	// formSubmit.appendChild(submit);
+	// mainDiv().appendChild(formSubmit);
 	mainDiv().appendChild(p);
 	quoteGetter();
 };
@@ -82,6 +98,13 @@ const loadCredits = (event) => {
 	mainDiv().appendChild(credit4);
 };
 
+const loadLogo = (event) => {
+	event.preventDefault;
+	alert(
+		"This is the best show on earth. Maybe even the universe! Dont take my word for it, the page said so."
+	);
+};
+
 const quoteGetter = () => {
 	const guessBtn = document.createElement("button");
 	guessBtn.className = "center-align";
@@ -93,11 +116,21 @@ const quoteGetter = () => {
 			.then((resp) => resp.json())
 			.then(function (quoteObj) {
 				const quote = quoteObj.data.content;
+				// const name = quoteObj.data.character.firstname;
 				const p = document.createElement("p");
+				// const p1 = document.createElement("p");
 				p.className = "container";
 				p.className = "quote-paragraph";
 				p.textContent = quote;
+				// p1.textContent = name;
 				mainDiv().appendChild(p);
+				// mainDiv().appendChild(p1);
+				setTimeout(function () {
+					const name = quoteObj.data.character.firstname;
+					const p = document.createElement("p");
+					p.textContent = name;
+					mainDiv().appendChild(p);
+				}, 5000);
 			});
 	});
 };
@@ -115,6 +148,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	attachHomeLink();
 	attachBeginLink();
 	attachCreditsLink();
+	attachlogoLink();
 });
 
 // How to reset the quote 'p' element everytime quote button is clicked?

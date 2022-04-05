@@ -35,6 +35,11 @@ form {
 	align-self: center;
 	grid-row: 5 / 6;
 }
+
+.input-field {
+	width: 200px;
+	background-color: white;
+}
 /* 
 .quotePar {
 	position: absolute;
