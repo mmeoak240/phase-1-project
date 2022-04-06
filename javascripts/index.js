@@ -127,6 +127,9 @@ const quoteGetter = () => {
 		fetch("https://www.officeapi.dev/api/quotes/random")
 			.then((resp) => resp.json())
 			.then(function (quoteObj) {
+				if (guessBtn.innerText === "Next") {
+					mainDiv.removeChild(p);
+				}
 				const quote = quoteObj.data.content;
 				// const name = quoteObj.data.character.firstname;
 				const p = document.createElement("p");
