@@ -26,9 +26,12 @@ The button will now say next, click the repeat step 3.
 The navigation bar links all operate using the ‘click’ event listener and use templates and DOM manipulation to change the page, all without having to redirect, creating a smoother user experience.
 The “Quote” button utilizes the ‘click’ event listener as well but it executes 3 main functions
 The first being a ‘fetch’ request that accesses an API on https://www.officeapi.dev and json()s the object.
+
+```
 guessBtn.addEventListener("click", (e) => {
 fetch("https://www.officeapi.dev/api/quotes/random")
 .then((resp) => resp.json())
+```
 
 The second function allows for the APIs returned information to be rendered to the page.
 
@@ -49,6 +52,8 @@ guessBtn.innerText = "Next";
 ```
 
 And the final function creates a setTimeout function that delays the rendering of the “firstName” value of the fetched object.
+
+```
 setTimeout(function () {
 const name = quoteObj.data.character.firstname;
 const lastName = quoteObj.data.character.lastname;
@@ -57,6 +62,7 @@ const p = document.createElement("p");
 p.textContent = answer + name + " " + lastName;
 mainDiv().appendChild(p);
 }, 5000);
+```
 
 ## Thanks:
 
