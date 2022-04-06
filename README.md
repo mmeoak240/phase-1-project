@@ -31,6 +31,8 @@ fetch("https://www.officeapi.dev/api/quotes/random")
 .then((resp) => resp.json())
 
 The second function allows for the APIs returned information to be rendered to the page.
+
+```
 .then(function (quoteObj) {
 const quote = quoteObj.data.content;
 const p = document.createElement("p");
@@ -44,6 +46,7 @@ mainDiv().appendChild(p);
 mainDiv().appendChild(timerP);
 // mainDiv().appendChild(p1);
 guessBtn.innerText = "Next";
+```
 
 And the final function creates a setTimeout function that delays the rendering of the “firstName” value of the fetched object.
 setTimeout(function () {
