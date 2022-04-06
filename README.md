@@ -13,10 +13,9 @@ The “Credits” page will bring you to the page giving credit to the people an
 How to use:
 Firstly please click the “Begin!” button at the top right of the page.
 This will bring you to the following page.
-![This is an image]("C:\Users\mmeoa\Pictures\Prework_website\phase_1_project_img1.png")
+![phase_1_project_img1](https://user-images.githubusercontent.com/97415262/162031737-33017664-d0e6-43be-bf8a-9f38708f2989.png)
 Whenever you are ready, click the “Quote” button. This will cause a quote by one of the characters from The Office to appear. You will have 5 seconds to guess who said the quote before the answer is provided.
-![This is an image]("C:\Users\mmeoa\Pictures\Prework_website\phase_1_project_img2.png")
-
+![phase_1_project_img2](https://user-images.githubusercontent.com/97415262/162031814-a2e7935b-1ccd-431a-b8fe-67cb38f63f7d.png)
 The button will now say next, click the repeat step 3.
 
 Code features:
