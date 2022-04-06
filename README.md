@@ -13,8 +13,9 @@ The “Credits” page will bring you to the page giving credit to the people an
 How to use:
 Firstly please click the “Begin!” button at the top right of the page.
 This will bring you to the following page.
-
+![This is an image]("C:\Users\mmeoa\Pictures\Prework_website\phase_1_project_img1.png")
 Whenever you are ready, click the “Quote” button. This will cause a quote by one of the characters from The Office to appear. You will have 5 seconds to guess who said the quote before the answer is provided.
+![This is an image]("C:\Users\mmeoa\Pictures\Prework_website\phase_1_project_img2.png")
 
 The button will now say next, click the repeat step 3.
 
