@@ -16,6 +16,21 @@ body {
 	justify-items: center;
 }
 
+h1 {
+	font-family: "Anton", sans-serif;
+}
+
+.main-para {
+	font-family: "Anton", sans-serif;
+	font-family: "Indie Flower", cursive;
+	font-size: 30px;
+}
+
+.list-element {
+	font-family: "Fredoka One", cursive;
+	font-size: 30px;
+}
+
 .navigation {
 	background-color: brown;
 }

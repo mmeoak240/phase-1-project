@@ -39,7 +39,9 @@ const loadHome = (event) => {
 	p.innerText = "How well do you know your Office family?";
 
 	h1.className = "center-align";
+	h1.className = "main-header";
 	p.className = "center-align";
+	p.className = "main-para";
 
 	mainDiv().innerHTML += imgURL;
 	mainDiv().appendChild(h1);
@@ -51,18 +53,19 @@ const loadBegin = (event) => {
 	resetMainDiv();
 	const h1 = document.createElement("h1");
 	const p = document.createElement("p");
-	const submit = document.createElement("input");
-	const text = document.createElement("input");
-	const formSubmit = document.createElement("form");
-	const formText = document.createElement("form");
+	// const submit = document.createElement("input");
+	// const text = document.createElement("input");
+	// const formSubmit = document.createElement("form");
+	// const formText = document.createElement("form");
 
 	h1.innerText = "Who Said...";
+	h1.className = "main-header";
 	// p.innerText = "You have 5 seconds";
 
 	h1.className = "center-align";
 	p.className = "center-align";
-	submit.type = "input";
-	text.type = "text";
+	// submit.type = "input";
+	// text.type = "text";
 	// input.className = "input-field";
 
 	mainDiv().appendChild(h1);
@@ -82,16 +85,25 @@ const loadCredits = (event) => {
 	const credit2 = document.createElement("li");
 	const credit3 = document.createElement("li");
 	const credit4 = document.createElement("li");
+	const credit5 = document.createElement("li");
 
-	h1.innerText = "Made possible because of:";
+	h1.innerText = "Made possible thanks to:";
 	credit1.innerText = "Flatiron School";
 	credit2.innerText = "Nancy Noyes";
 	credit3.innerText = "The 2022-02seng-flex cohort";
 	credit4.innerText = "https://www.officeapi.dev/";
+	credit5.innerText = "My supportive wife";
+
+	credit1.className = "list-element";
+	credit2.className = "list-element";
+	credit3.className = "list-element";
+	credit4.className = "list-element";
+	credit5.className = "list-element";
 
 	h1.className = "center-align";
 
 	mainDiv().appendChild(h1);
+	mainDiv().appendChild(credit5);
 	mainDiv().appendChild(credit1);
 	mainDiv().appendChild(credit2);
 	mainDiv().appendChild(credit3);
@@ -130,8 +142,10 @@ const quoteGetter = () => {
 				// mainDiv().appendChild(p1);
 				setTimeout(function () {
 					const name = quoteObj.data.character.firstname;
+					const lastName = quoteObj.data.character.lastname;
+					const answer = "Answer: ";
 					const p = document.createElement("p");
-					p.textContent = name;
+					p.textContent = answer + name + " " + lastName;
 					mainDiv().appendChild(p);
 				}, 5000);
 			});
@@ -156,3 +170,4 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // How to reset the quote 'p' element everytime quote button is clicked?
 // How to make quote button stay in place and have quotes appear in same place above everytime?
+// Origianl idea was a form that you could type the name of a character into and see if the inputs value equaled the fetched objects name value and display correct or incorrect
