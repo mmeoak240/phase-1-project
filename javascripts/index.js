@@ -127,30 +127,31 @@ const quoteGetter = () => {
 		fetch("https://www.officeapi.dev/api/quotes/random")
 			.then((resp) => resp.json())
 			.then(function (quoteObj) {
-				if (guessBtn.innerText === "Next") {
-					mainDiv.removeChild(p);
-				}
 				const quote = quoteObj.data.content;
-				// const name = quoteObj.data.character.firstname;
 				const p = document.createElement("p");
 				const timerP = document.createElement("p");
-				// const p1 = document.createElement("p");
 				p.className = "container";
 				p.className = "quote-paragraph";
 				p.textContent = quote;
 				timerP.textContent = "You have 5 seconds";
-				// p1.textContent = name;
-				mainDiv().appendChild(p);
-				mainDiv().appendChild(timerP);
-				// mainDiv().appendChild(p1);
-				setTimeout(function () {
-					const name = quoteObj.data.character.firstname;
-					const lastName = quoteObj.data.character.lastname;
-					const answer = "Answer: ";
-					const p = document.createElement("p");
-					p.textContent = answer + name + " " + lastName;
+				if (guessBtn.innerText === "Quote") {
 					mainDiv().appendChild(p);
-				}, 5000);
+					mainDiv().appendChild(timerP);
+					// mainDiv().appendChild(p1);
+					guessBtn.innerText = "Next";
+					setTimeout(function () {
+						const name = quoteObj.data.character.firstname;
+						const lastName = quoteObj.data.character.lastname;
+						const answer = "Answer: ";
+						const p = document.createElement("p");
+						p.textContent = answer + name + " " + lastName;
+						mainDiv().appendChild(p);
+					}, 5000);
+				} else if (guessBtn.innerText === "Next") {
+					mainDiv.removeChild(p);
+					mainDiv().appendChild(p);
+					mainDiv().appendChild(timerP);
+				}
 			});
 	});
 };
