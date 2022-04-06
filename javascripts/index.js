@@ -133,24 +133,33 @@ const quoteGetter = () => {
 				p.className = "container";
 				p.className = "quote-paragraph";
 				p.textContent = quote;
-				timerP.textContent = "You have 5 seconds";
+				timerP.textContent = "You have 10 seconds";
 				if (guessBtn.innerText === "Quote") {
 					mainDiv().appendChild(p);
 					mainDiv().appendChild(timerP);
 					// mainDiv().appendChild(p1);
 					guessBtn.innerText = "Next";
-					setTimeout(function () {
+					setTimeout(() => {
 						const name = quoteObj.data.character.firstname;
 						const lastName = quoteObj.data.character.lastname;
 						const answer = "Answer: ";
 						const p = document.createElement("p");
+						p.className = "timed-answer";
 						p.textContent = answer + name + " " + lastName;
 						mainDiv().appendChild(p);
-					}, 5000);
+					}, 7000);
 				} else if (guessBtn.innerText === "Next") {
-					mainDiv.removeChild(p);
-					mainDiv().appendChild(p);
-					mainDiv().appendChild(timerP);
+					document.querySelector(".quote-paragraph").innerText = "";
+					document.querySelector(".quote-paragraph").innerText = p.textContent;
+					document.querySelector(".timed-answer").innerText = "";
+
+					setTimeout(() => {
+						const name = quoteObj.data.character.firstname;
+						const lastName = quoteObj.data.character.lastname;
+						const answer = "Answer: ";
+						const p = document.querySelector(".timed-answer");
+						p.textContent = answer + name + " " + lastName;
+					}, 7000);
 				}
 			});
 	});
