@@ -147,7 +147,7 @@ const quoteGetter = () => {
 						p.className = "timed-answer";
 						p.textContent = answer + name + " " + lastName;
 						mainDiv().appendChild(p);
-					}, 7000);
+					}, 10000);
 				} else if (guessBtn.innerText === "Next") {
 					document.querySelector(".quote-paragraph").innerText = "";
 					document.querySelector(".quote-paragraph").innerText = p.textContent;
@@ -159,7 +159,7 @@ const quoteGetter = () => {
 						const answer = "Answer: ";
 						const p = document.querySelector(".timed-answer");
 						p.textContent = answer + name + " " + lastName;
-					}, 7000);
+					}, 10000);
 				}
 			});
 	});
