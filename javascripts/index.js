@@ -53,25 +53,14 @@ const loadBegin = (event) => {
 	resetMainDiv();
 	const h1 = document.createElement("h1");
 	const p = document.createElement("p");
-	// const submit = document.createElement("input");
-	// const text = document.createElement("input");
-	// const formSubmit = document.createElement("form");
-	// const formText = document.createElement("form");
 
 	h1.innerText = "Who Said...";
 	h1.className = "main-header";
-	// p.innerText = "You have 5 seconds";
 
 	h1.className = "center-align";
 	p.className = "center-align";
-	// submit.type = "input";
-	// text.type = "text";
-	// input.className = "input-field";
 
 	mainDiv().appendChild(h1);
-	// formText.appendChild(text);
-	// formSubmit.appendChild(submit);
-	// mainDiv().appendChild(formSubmit);
 	mainDiv().appendChild(p);
 	quoteGetter();
 };
@@ -137,7 +126,6 @@ const quoteGetter = () => {
 				if (guessBtn.innerText === "Quote") {
 					mainDiv().appendChild(p);
 					mainDiv().appendChild(timerP);
-					// mainDiv().appendChild(p1);
 					guessBtn.innerText = "Next";
 					setTimeout(() => {
 						const name = quoteObj.data.character.firstname;
@@ -180,7 +168,3 @@ document.addEventListener("DOMContentLoaded", function () {
 	attachCreditsLink();
 	attachlogoLink();
 });
-
-// How to reset the quote 'p' element everytime quote button is clicked?
-// How to make quote button stay in place and have quotes appear in same place above everytime?
-// Origianl idea was a form that you could type the name of a character into and see if the inputs value equaled the fetched objects name value and display correct or incorrect
